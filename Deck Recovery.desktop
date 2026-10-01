@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Deck Recovery
+Name[ru]=Deck Recovery — бэкап и восстановление
+Comment=Steam Deck backup and recovery console
+Comment[ru]=Меню резервного копирования и восстановления Steam Deck
+Exec=python3 -c "import os,pathlib,sys,urllib.parse; p=sys.argv[1]; p=urllib.parse.unquote(urllib.parse.urlparse(p).path) if p.startswith('file:') else p; os.execv('/bin/bash',['bash',str(pathlib.Path(p).resolve().parent/'rec.sh')])" %k
+Icon=utilities-terminal
+Terminal=true
+Categories=System;
